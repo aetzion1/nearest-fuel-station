@@ -13,17 +13,17 @@ describe "user can visit the welcome page" do
 
     select('Turing', from: :location)
     click_button "Find Nearest Station"
-
-    save_and_open_page
     
     expect(current_path).to eq search_path
 
-    expect(page).to have_content(station.name)
-    expect(page).to have_content(station.address)
-    expect(page).to have_content(station.fuel_type)
-    expect(page).to have_content(station.access_times)
-    expect(page).to have_content(station.distance)
-    expect(page).to have_content(station.travel_time)
-    expect(page).to have_content(station.directions)
+    expect(page).to have_css('.station_info')
+
+    expect(page).to have_content('Seventeenth Street Plaza')
+    expect(page).to have_content('Address: 1225 17th St. Denver, CO 80202')
+    expect(page).to have_content('Fuel Type: ELEC')
+    expect(page).to have_content('Access Times: ')
+    expect(page).to have_content('Distance: 0.0934')
+    expect(page).to have_content('Directions: Start out going southeast on 17th St toward Larimer St/CO-33.')
+    expect(page).to have_content('Travel Time: 164')
   end
 end

@@ -3,8 +3,10 @@ class Station
               :address,
               :fuel_type,
               :access_times,
-              :distance
-              
+              :distance,
+              :travel_time,
+              :directions
+
   def initialize(attributes)
     @id = attributes[:id]
     @name = attributes[:station_name]
@@ -15,6 +17,8 @@ class Station
     @fuel_type = attributes[:fuel_type_code]
     @access_times = attributes[:access_days_times]
     @distance = attributes[:distance]
+    @directions = attributes[:directions]
+    @travel_time = attributes[:travel_time]
   end
 
   def address

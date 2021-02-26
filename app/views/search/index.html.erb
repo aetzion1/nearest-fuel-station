@@ -1,9 +1,13 @@
 <h2>Nearest Station</h2>
 
+<section class='station_info'>
 <%= @station.name %>
-Address: <%= @station.address %>
-Fuel Type: <%= @station.fuel_type %>
-Access Times: <%= @station.access_times %>
-Distance: <%= @station.distance %>
-Travel Time: 
-Directions: 
+    <ul>
+      <li>Address: <%= @station.address %> </li>
+      <li>Fuel Type: <%= @station.fuel_type %> </li>
+      <li>Access Times: <%= @station.access_times %> </li>
+      <li>Distance: <%= @station.distance %> </li>
+      <li>Travel Time: <%= @travel_time[0]%> </li>
+      <li>Directions: <%= @directions[0] %> </li>
+    </ul>
+</section>
