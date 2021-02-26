@@ -7,4 +7,11 @@ describe "user can visit the welcome page" do
     expect(page).to have_content("Search For The Nearest Electric Charging Station")
     expect(page).to have_button("Find Nearest Station")
   end
+
+  scenario "and selects Turing from the start location and search" do
+    visit '/'
+    click_button "Find Nearest Station"
+    
+    expect(current_path).to eq ``
+  end
 end
