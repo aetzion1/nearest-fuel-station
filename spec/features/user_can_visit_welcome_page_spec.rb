@@ -10,7 +10,11 @@ describe "user can visit the welcome page" do
 
   scenario "and selects Turing from the start location and search" do
     visit '/'
+
+    select('Turing', from: :location)
     click_button "Find Nearest Station"
+
+    save_and_open_page
     
     expect(current_path).to eq search_path
 
