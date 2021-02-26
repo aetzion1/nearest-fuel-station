@@ -1,7 +1,8 @@
 class SearchController < ApplicationController
   def index
     address = params[:location]
-    @station = nearest_station(address)
+    data = nearest_station(address)
+    @station = Station.new(data)
     require 'pry'; binding.pry
   end
 
